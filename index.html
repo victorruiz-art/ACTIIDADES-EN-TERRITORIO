@@ -32,10 +32,10 @@ body{
   font-family:'DM Sans',sans-serif;
   background:var(--bg);
   color:var(--text);
-  height:100vh;
+  min-height:100vh;
   display:flex;
   flex-direction:column;
-  overflow:hidden;
+  overflow:auto;
 }
 
 /* HEADER CON IMAGEN */
@@ -150,9 +150,9 @@ body{
 /* MAIN LAYOUT */
 .layout{
   display:grid;
-  grid-template-columns:290px 1fr;
+  grid-template-columns:410px 1fr;
   flex:1;
-  overflow:hidden;
+  min-height:0;
 }
 
 /* SIDEBAR */
@@ -161,7 +161,8 @@ body{
   border-right:1px solid var(--border);
   display:flex;
   flex-direction:column;
-  overflow:hidden;
+  overflow-y:auto;
+  min-height:0;
 }
 
 .sb-sec{
