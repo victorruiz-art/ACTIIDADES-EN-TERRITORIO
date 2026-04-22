@@ -9,23 +9,71 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 <style>
 :root{
-  --bg:#f0f4f8;--card:#fff;--dark:#0f2236;--accent:#1565c0;--accent2:#1976d2;
-  --cyan:#00acc1;--green:#2e7d32;--orange:#e65100;--red:#c62828;
-  --text:#1a2332;--muted:#607d8b;--border:#e0e6ed;--radius:10px;
-  --shadow:0 2px 12px rgba(0,0,0,.09);
+  --bg:#f7f1f8;
+  --card:#ffffff;
+  --dark:#a316b6;
+  --accent:#c218c2;
+  --accent2:#8e0f9f;
+  --cyan:#d96ad9;
+  --green:#39b56a;
+  --orange:#d46ad3;
+  --red:#b51f8f;
+  --text:#4a235a;
+  --muted:#8a5a96;
+  --border:#ebd7ef;
+  --radius:12px;
+  --shadow:0 4px 16px rgba(163,22,182,.12);
 }
 *{box-sizing:border-box;margin:0;padding:0;}
 body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);height:100vh;display:flex;flex-direction:column;overflow:hidden;}
 
 /* HEADER */
-.hdr{background:var(--dark);color:#fff;padding:0 20px;height:54px;display:flex;align-items:center;gap:14px;flex-shrink:0;border-bottom:3px solid var(--accent);}
-.hdr-logo{width:34px;height:34px;background:var(--accent);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0;}
-.hdr h1{font-family:'Syne',sans-serif;font-size:14px;font-weight:700;}
-.hdr-sub{font-size:11px;color:#90a4ae;margin-top:1px;}
-.hdr-right{margin-left:auto;display:flex;gap:8px;align-items:center;}
-.badge{border-radius:20px;padding:3px 11px;font-size:11px;font-weight:600;}
-.badge-blue{background:rgba(21,101,192,.18);color:#64b5f6;border:1px solid rgba(21,101,192,.3);}
-.badge-green{background:rgba(46,125,50,.18);color:#81c784;border:1px solid rgba(46,125,50,.3);}
+.hdr-banner{
+  position:relative;
+  background:linear-gradient(90deg,#a316b6 0%, #c218c2 100%);
+  padding:0;
+  min-height:140px;
+  border-bottom:4px solid var(--accent2);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+}
+
+.hdr-banner-img{
+  width:100%;
+  max-height:220px;
+  object-fit:cover;
+  display:block;
+}
+
+.floating-badges{
+  position:absolute;
+  right:24px;
+  top:22px;
+  display:flex;
+  gap:10px;
+  align-items:center;
+}
+
+.badge{
+  border-radius:20px;
+  padding:6px 14px;
+  font-size:12px;
+  font-weight:700;
+}
+
+.badge-blue{
+  background:rgba(255,255,255,.14);
+  color:#fff;
+  border:1px solid rgba(255,255,255,.28);
+}
+
+.badge-green{
+  background:rgba(57,181,106,.18);
+  color:#d8ffe5;
+  border:1px solid rgba(57,181,106,.35);
+}
 
 /* KPI STRIP */
 .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding:10px 16px;background:var(--dark);border-bottom:1px solid rgba(255,255,255,.07);flex-shrink:0;}
@@ -80,13 +128,9 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);hei
 </head>
 <body>
 
-<header class="hdr">
-  <div class="hdr-logo">📊</div>
-  <div>
-    <div class="hdr h1" style="font-family:'Syne',sans-serif;font-size:14px;font-weight:700;color:#fff">Dashboard Actividades Territoriales</div>
-    <div class="hdr-sub">Secretaría de Bienestar Social — Cali, Valle del Cauca</div>
-  </div>
-  <div class="hdr-right">
+<header class="hdr-banner">
+  <img src="banner_observatorio.png" alt="Observatorio de Políticas Sociales" class="hdr-banner-img">
+  <div class="hdr-right floating-badges">
     <div class="badge badge-green">● En línea</div>
     <div class="badge badge-blue" id="hBadge">1.298 registros</div>
   </div>
