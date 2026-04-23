@@ -446,7 +446,6 @@ const COORDS = {
   'Comuna 22':[3.368,-76.543]
 };
 
-// ── MAPA ──────────────────────────────────────────────────────
 const map = L.map('map').setView([3.431,-76.520],12);
 
 L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',{
@@ -584,10 +583,6 @@ function limpiar(){
   filtrar();
 }
 
-// Init
 renderKPIs(DATOS);
 renderTabla(DATOS);
 renderMapa(DATOS);
-</script>
-</body>
-</html>
